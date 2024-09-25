@@ -1,15 +1,21 @@
-import React from 'react'
-import AdminSideBar from '../components/Admin/Sidebar/AdminSideBar'
+import React from 'react';
+import AdminSideBar from '../components/Admin/Sidebar/AdminSideBar';
+import DashboardFeaturePage from '../pages/Admin/DashboardFeaturesPage';
+
 const DashboardFeature = () => {
   return (
-    <div>
-    <div className='bg-[#fbfbfb ] min-h-screen w-full'>
-      <div className='w-[16.25rem] text-black  fixed'>
+    <div className='bg-[#fbfbfb] min-h-screen flex'>
+      {/* Sidebar */}
+      <div className='w-[16.25rem] text-black fixed h-full'>
         <AdminSideBar active={2} />
       </div>
-    </div>
-    </div>
-  )
-}
 
-export default DashboardFeature
+      {/* Content */}
+      <div className='ml-[16.25rem] flex-1 p-6'>
+        <DashboardFeaturePage />
+      </div>
+    </div>
+  );
+};
+
+export default DashboardFeature;
