@@ -1,9 +1,9 @@
 import React from 'react'
 import DashboardNavbar from '../../components/Navbar/DashboardNavbar'
-const DashboardFeaturesPage = () => {
+const DashboardFeaturesPage = ({isDarkMode,ontoggleDarkMode}) => {
   return (
     <div>
-        <DashboardNavbar active={"Feature"}/>
+        <DashboardNavbar active={"Feature"} isDarkMode={isDarkMode} ontoggleDarkMode={ontoggleDarkMode}/>
     </div>
   )
 }

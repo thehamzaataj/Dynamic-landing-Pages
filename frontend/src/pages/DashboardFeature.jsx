@@ -2,17 +2,17 @@ import React from 'react';
 import AdminSideBar from '../components/Admin/Sidebar/AdminSideBar';
 import DashboardFeaturePage from '../pages/Admin/DashboardFeaturesPage';
 
-const DashboardFeature = () => {
+const DashboardFeature = ({ isDarkMode, ontoggleDarkMode }) => {
   return (
-    <div className='bg-[#fbfbfb] min-h-screen flex'>
+    <div className={`min-h-screen flex ${isDarkMode ? 'bg-[#000000e9] text-white' : 'bg-[#fbfbfb] text-black'}`}>
       {/* Sidebar */}
       <div className='w-[16.25rem] text-black fixed h-full'>
-        <AdminSideBar active={2} />
+        <AdminSideBar active={2} isDarkMode={isDarkMode} ontoggleDarkMode={ontoggleDarkMode}/>
       </div>
 
       {/* Content */}
       <div className='ml-[16.25rem] flex-1 p-6'>
-        <DashboardFeaturePage />
+        <DashboardFeaturePage isDarkMode={isDarkMode} ontoggleDarkMode={ontoggleDarkMode} />
       </div>
     </div>
   );

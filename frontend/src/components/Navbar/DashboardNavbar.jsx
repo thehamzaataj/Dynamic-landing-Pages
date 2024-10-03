@@ -1,41 +1,33 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { RiHome7Line, RiNotificationLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { UserButton } from "@clerk/clerk-react";
 
-const DashboardNavbar = ({active}) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+const DashboardNavbar = ({ active, isDarkMode, ontoggleDarkMode }) => {
   const [isNotificationDropdownOpen, setIsNotificationDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null); 
-
-  const handleToggle = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  const dropdownRef = useRef(null);
 
   const toggleNotificationDropdown = () => {
     setIsNotificationDropdownOpen(!isNotificationDropdownOpen);
   };
 
-  // Close the dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsNotificationDropdownOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
-    <div className={`w-full p-3 rounded-md flex justify-between items-center ${isDarkMode ? 'bg-gray-800' : ''}`}>
+    <div className={`w-full p-3  rounded-md  flex justify-between items-center  ${isDarkMode ? '' : 'bg-transparent'}`}>
       <div>
         <div className={`flex items-center space-x-1.5 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-          <Link to={"/dashboard"} className="">
+          <Link to={"/dashboard"}>
             <RiHome7Line className="text-[15px]" />
           </Link>
           <span className="text-[15px]">/</span>
@@ -47,19 +39,21 @@ const DashboardNavbar = ({active}) => {
       </div>
 
       <div className="flex items-center space-x-3">
-        {/* Toggle switch */}
+        {/* Toggle dark mode switch */}
         <label className="inline-flex items-center cursor-pointer">
-          <span className={`p-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>{isDarkMode ? "Dark Mode" : "Light Mode"}</span>
+          <span className={`p-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+            {isDarkMode ? "Dark Mode" : "Light Mode"}
+          </span>
           <input
             type="checkbox"
             checked={isDarkMode}
-            onChange={handleToggle}
-            className="sr-only peer"
+            onChange={ontoggleDarkMode} // Ensure correct prop usage
+            className="sr-only peer "
           />
           <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer dark:bg-gray-700 peer-checked:bg-blue-600 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
         </label>
 
-        {/* Notification icon with dropdown */}
+        {/* Notification icon */}
         <div className="relative" ref={dropdownRef}>
           <RiNotificationLine
             className={`text-[20px] cursor-pointer ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}
@@ -80,7 +74,7 @@ const DashboardNavbar = ({active}) => {
         </div>
 
         {/* User button */}
-        <UserButton/>
+        <UserButton />
       </div>
     </div>
   );
