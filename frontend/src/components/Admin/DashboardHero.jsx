@@ -4,11 +4,11 @@ import DashboardNavbar from '../Navbar/DashboardNavbar';
 import TrafficChart from './AnalyticsChart/TrafficChart.jsx';
 import TotalUser from './AnalyticsChart/TotalUser.jsx';
 import LeadsChart from './AnalyticsChart/LeadsChart.jsx';
-
+import ProductTable from '../Admin/ProductTable.jsx'
 const DashboardHero = ({isDarkMode,ontoggleDarkMode}) => {
   return (
     <div className=''>
-      <div>
+      <div className='' >
       <DashboardNavbar active={"Dashboard"} isDarkMode={isDarkMode} ontoggleDarkMode={ontoggleDarkMode} />
       </div>
       <HeroTotalUser isDarkMode={isDarkMode}/>
@@ -16,7 +16,9 @@ const DashboardHero = ({isDarkMode,ontoggleDarkMode}) => {
       <LeadsChart isDarkMode={isDarkMode}/>
       <TotalUser className="mr-6"isDarkMode={isDarkMode} />
       </div>
-
+      <div >
+      <ProductTable isDarkMode={isDarkMode} />
+    </div>
 
     </div>
   )

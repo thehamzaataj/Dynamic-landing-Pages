@@ -1,0 +1,8 @@
+.bg-image {
+    background-image: url("../../public/o.png");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+  }
+  

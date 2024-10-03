@@ -72,8 +72,8 @@ const TotalUser = ({isDarkMode}) => {
     <div className={`w-[40%] rounded-lg shadow  p-4 md:p-6 ${isDarkMode?'bg-[#1c1e21]':'bg-white'}`}>
       <div className="flex justify-between">
         <div>
-          <h5 className="leading-none text-3xl font-bold text-gray-900  pb-2">32.4k</h5>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400">Users this week</p>
+          <h5 className={`leading-none text-3xl font-bold  pb-2 ${isDarkMode?'text-gray-300':'text-gray-900'}`}>32.4k</h5>
+          <p className="text-base font-normal text-gray-500 ">Users this week</p>
         </div>
         <div className="flex items-center px-2.5 py-0.5  text-base font-semibold text-green-500 dark:text-green-500 text-center">
           12%
@@ -89,7 +89,7 @@ const TotalUser = ({isDarkMode}) => {
         <div className="flex justify-between items-center pt-5">
           <button
             id="dropdownDefaultButton"
-            className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center"
+            className="text-sm font-medium text-gray-500 hover:text-gray-900 text-center inline-flex items-center"
             type="button">
             Last 7 days
             <svg className="w-2.5 m-2.5 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -98,7 +98,7 @@ const TotalUser = ({isDarkMode}) => {
           </button>
           <a
             href="#"
-            className="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600 hover:text-blue-700 dark:hover:text-blue-500 hover:bg-gray-100 px-3 py-2">
+            className="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600 hover:text-blue-700  hover:bg-gray-100 px-3 py-2">
             Users Report
             <svg className="w-2.5 h-2.5 ms-1.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>

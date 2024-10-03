@@ -24,7 +24,7 @@ const DashboardNavbar = ({ active, isDarkMode, ontoggleDarkMode }) => {
   }, []);
 
   return (
-    <div className={`w-full p-3  rounded-md  flex justify-between items-center  ${isDarkMode ? '' : 'bg-transparent'}`}>
+    <div className={`w-full p-3 rounded-md sticky flex justify-between items-center  ${isDarkMode ? '' : 'bg-transparent'}`}>
       <div>
         <div className={`flex items-center space-x-1.5 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
           <Link to={"/dashboard"}>

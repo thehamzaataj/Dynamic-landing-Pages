@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const AdminSideBar = ({ active, isDarkMode }) => {
   return (
-    <div className={`space-y-3 h-[100vh] overflow-y-auto shadow-lg ${isDarkMode ? 'bg-[#1c1e21] text-gray-300' : 'bg-white text-black'}`}>
+    <div className={`space-y-3 h-full overflow-y-auto shadow-lg ${isDarkMode ? 'bg-[#1c1e21] text-gray-300' : 'bg-white text-black'}`}>
       <div className="p-7 pb-2 flex items-center space-x-1">
         <img 
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNMSOUWdcE8LB2NnQIlFq5x4Xk0POR4_b3UA&s" 

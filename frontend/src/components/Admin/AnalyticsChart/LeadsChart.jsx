@@ -10,7 +10,7 @@ const LeadsChart = ({isDarkMode}) => {
         name: "Organic",
         color: "#1A56DB",
         data: [
-          { x: "Mon", y: 231 },
+          { x: "Mon", y: 500 },
           { x: "Tue", y: 122 },
           { x: "Wed", y: 63 },
           { x: "Thu", y: 421 },
@@ -44,7 +44,7 @@ const LeadsChart = ({isDarkMode}) => {
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "70%",
+        columnWidth: "80%",
         borderRadiusApplication: "end",
         borderRadius: 8,
       },
@@ -158,7 +158,7 @@ const LeadsChart = ({isDarkMode}) => {
       {/* Column Chart */}
       <div id="column-chart"></div>
 
-      <div className="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+      <div className="grid grid-cols-1 items-center border-gray-200 border-t  justify-between">
         <div className="flex justify-between items-center pt-5">
           {/* Button */}
           <button
@@ -173,28 +173,28 @@ const LeadsChart = ({isDarkMode}) => {
             </svg>
           </button>
           {/* Dropdown menu */}
-          <div id="lastDaysdropdown" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+          <div id="lastDaysdropdown" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
             <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
               <li>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Yesterday</a>
+                <a href="#" className="block px-4 py-2 hover:bg-gray-100  dark:hover:text-white">Yesterday</a>
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Today</a>
+                <a href="#" className="block px-4 py-2 hover:bg-gray-100  dark:hover:text-white">Today</a>
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 7 days</a>
+                <a href="#" className="block px-4 py-2 hover:bg-gray-100  dark:hover:text-white">Last 7 days</a>
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 30 days</a>
+                <a href="#" className="block px-4 py-2 hover:bg-gray-100  dark:hover:text-white">Last 30 days</a>
               </li>
               <li>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 90 days</a>
+                <a href="#" className="block px-4 py-2 hover:bg-gray-100  dark:hover:text-white">Last 90 days</a>
               </li>
             </ul>
           </div>
           <a
             href="#"
-            className="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600 hover:text-blue-700 dark:hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2">
+            className="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600 hover:text-blue-700 dark:hover:text-blue-500 hover:bg-gray-100  px-3 py-2">
             Leads Report
             <svg className="w-2.5 h-2.5 ms-1.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
