@@ -1,16 +1,33 @@
-// src/components/Navbar.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaFacebook, FaInstagram, FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [navBg, setNavBg] = useState(false); // State to track background change
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Detect scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setNavBg(true); // Apply white background when scrolled down
+      } else {
+        setNavBg(false); // Apply transparent background at the top
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className=" sm:bg-transparent p-4 md:p-8 ">
+    <nav className={`sticky top-0 z-50 p-4 md:p-8 transition-colors duration-300 ${navBg ? 'bg-white shadow-md' : 'bg-transparent'}`}>
       <div className="flex justify-between items-center">
         <h1 className="font-bold text-2xl text-[#355EFC] sm:text-3xl">LANDMINE</h1>
         <div className="sm:hidden">
