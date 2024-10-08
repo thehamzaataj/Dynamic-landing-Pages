@@ -32,17 +32,19 @@ const FAQSection = () => {
                 {/* Accordion 1 */}
                 <div
                   className={`accordion pb-8 border-b border-solid border-gray-200 ${
-                    activeIndex === 1 ? "active" : ""
+                    activeIndex === 1 ? "active text-blue-500" : ""
                   }`}
                 >
                   <button
-                    className="accordion-toggle group inline-flex items-center justify-between text-xl font-normal leading-8 text-gray-600 w-full transition duration-500 hover:text-indigo-600"
+                    className="accordion-toggle group inline-flex items-center justify-between text-xl font-normal leading-8 text-gray-600 w-full transition duration-500 "
                     onClick={() => toggleAccordion(1)}
                   >
-                    <h5>How to create an account?</h5>
+                    <h5 className={`${
+                        activeIndex === 1 ? " text-blue-500" : ""
+                      }`}>How to create an account?</h5>
                     <svg
                       className={`transition duration-500 ${
-                        activeIndex === 1 ? "rotate-180" : ""
+                        activeIndex === 1 ? "rotate-180 text-blue-500" : ""
                       }`}
                       width="22"
                       height="22"
@@ -75,17 +77,19 @@ const FAQSection = () => {
                 {/* Accordion 2 */}
                 <div
                   className={`accordion py-8 border-b border-solid border-gray-200 ${
-                    activeIndex === 2 ? "active" : ""
+                    activeIndex === 2 ? "active text-blue-500" : ""
                   }`}
                 >
                   <button
-                    className="accordion-toggle group inline-flex items-center justify-between text-xl font-normal leading-8 text-gray-600 w-full transition duration-500 hover:text-indigo-600"
+                    className="accordion-toggle group inline-flex items-center justify-between text-xl font-normal leading-8 text-gray-600 w-full transition duration-500 "
                     onClick={() => toggleAccordion(2)}
                   >
-                    <h5>Have any trust issue?</h5>
+                    <h5 className={`${
+                        activeIndex === 2 ? " text-blue-500" : ""
+                      }`} >Have any trust issue?</h5>
                     <svg
                       className={`transition duration-500 ${
-                        activeIndex === 2 ? "rotate-180" : ""
+                        activeIndex === 2 ? "rotate-180 text-blue-500" : ""
                       }`}
                       width="22"
                       height="22"
@@ -117,17 +121,19 @@ const FAQSection = () => {
                 {/* Accordion 3 */}
                 <div
                   className={`accordion py-8 border-b border-solid border-gray-200 ${
-                    activeIndex === 3 ? "active" : ""
+                    activeIndex === 3 ? "active text-blue-500" : ""
                   }`}
                 >
                   <button
-                    className="accordion-toggle group inline-flex items-center justify-between text-xl font-normal leading-8 text-gray-600 w-full transition duration-500 hover:text-indigo-600"
+                    className="accordion-toggle group inline-flex items-center justify-between text-xl font-normal leading-8 text-gray-600 w-full transition duration-500 "
                     onClick={() => toggleAccordion(3)}
                   >
-                    <h5>How can I reset my password?</h5>
+                    <h5 className={`${
+                        activeIndex === 3 ? " text-blue-500" : ""
+                      }`}>How can I reset my password?</h5>
                     <svg
                       className={`transition duration-500 ${
-                        activeIndex === 3 ? "rotate-180" : ""
+                        activeIndex === 3 ? "rotate-180 text-blue-500"  : ""
                       }`}
                       width="22"
                       height="22"
@@ -158,17 +164,19 @@ const FAQSection = () => {
                 {/* Accordion 4 */}
                 <div
                   className={`accordion py-8 ${
-                    activeIndex === 4 ? "active" : ""
+                    activeIndex === 4 ? "active " : ""
                   }`}
                 >
                   <button
-                    className="accordion-toggle group inline-flex items-center justify-between text-xl font-normal leading-8 text-gray-600 w-full transition duration-500 hover:text-indigo-600"
+                    className="accordion-toggle group inline-flex items-center justify-between text-xl font-normal leading-8 text-gray-600 w-full transition duration-500 "
                     onClick={() => toggleAccordion(4)}
                   >
-                    <h5>What is the payment process?</h5>
+                    <h5 className={`${
+                        activeIndex === 4 ? " text-blue-500" : ""
+                      }`}>What is the payment process?</h5>
                     <svg
                       className={`transition duration-500 ${
-                        activeIndex === 4 ? "rotate-180" : ""
+                        activeIndex === 4 ? "rotate-180 text-blue-500" : ""
                       }`}
                       width="22"
                       height="22"

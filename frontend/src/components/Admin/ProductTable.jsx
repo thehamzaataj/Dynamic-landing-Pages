@@ -197,11 +197,11 @@ const ProductTable = ({ isDarkMode }) => {
                         name="filter-radio"
                         checked={selectedFilter === filter}
                         onChange={() => handleFilterSelect(filter)}
-                        className={`w-4 h-4 focus:ring-blue-500 ${
+                        className={`block p-2 ps-10 text-sm border rounded-lg w-80 ${
                           isDarkMode
-                            ? 'text-gray-50 bg-gray-700 border-gray-600'
-                            : 'text-blue-600 bg-gray-100 border-gray-300'
-                        }`} 
+                            ? 'bg-[#1c1e21] text-gray-300 border-gray-600'
+                            : 'bg-gray-50 text-gray-900 border-gray-300'
+                        } focus:ring-blue-500 focus:border-blue-500`} 
                       />
                       <label
                         htmlFor={`filter-radio-${filter}`}
@@ -300,7 +300,7 @@ const ProductTable = ({ isDarkMode }) => {
                 key={product.id}
                 className={`border-b ${
                   isDarkMode
-                    ? 'bg-gray-800 border-gray-700 hover:bg-gray-700'
+                    ? 'bg-[#1c1e21] border-gray-700 hover:bg-gray-800'
                     : 'bg-white border-gray-200 hover:bg-gray-100'
                 }`} 
               >
@@ -371,7 +371,7 @@ const ProductTable = ({ isDarkMode }) => {
           ) : (
             <tr
               className={`${
-                isDarkMode ? 'bg-gray-800' : 'bg-white'
+                isDarkMode ? 'bg-[#1c1e21]' : 'bg-white'
               } hover:bg-gray-50`} 
             >
               <td colSpan="6" className="px-6 py-4 text-center">
