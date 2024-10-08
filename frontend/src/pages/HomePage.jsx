@@ -8,7 +8,7 @@ import FaqSection from '../components/FaqSection.jsx';
 import Footer from '../components/Footer.jsx';
 import './HomePage.css';
 import Features from '../components/Features.jsx';
-import { FaArrowUp } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa6";
 
 const HomePage = () => {
   // Create refs for the Navbar and Hero sections
