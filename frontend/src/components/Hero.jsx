@@ -5,8 +5,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <div className="grid grid-cols-2 px-5 sm:px-20 py- gap-8 items-center">
-      {/* Heading Section */}
+    <div className="grid grid-cols-2 px-5 py-[80px] sm:px-20 sm:py-[101px] gap-8 items-center">
       <motion.div
         className="sm:flex flex-col gap-1"
         initial={{ y: -100, opacity: 0 }}
@@ -25,7 +24,6 @@ const Hero = () => {
         </Link>
       </motion.div>
 
-      {/* Image Section */}
       <motion.div
         className="flex justify-center"
         initial={{ y: 100, opacity: 0 }} 

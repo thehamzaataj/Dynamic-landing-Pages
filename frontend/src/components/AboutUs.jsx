@@ -27,18 +27,18 @@ const AboutUs = () => {
 
   return (
     <div>
-      <div className="flex flex-col md:flex-row p-6 md:p-16 space-y-6 md:space-y-0 md:space-x-8">
+      <div className="flex flex-col md:flex-row  px-6 pt-6 md:p-16 space-y-6 md: md:space-x-8">
         <motion.div
-          className="w-full md:w-1/2"
-          initial={{ opacity: 0, translateY: 50 }}
-          whileInView={{ opacity: 1, translateY: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }} 
+          className="flex justify-center"
+          initial={{ y: 100, opacity: 0 }} 
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2.5 }} 
+          viewport={{ once: false }}  
         >
           <img
             src="https://themewagon.github.io/finanza/img/about.jpg"
             alt="About Us"
-            className="w-full h-auto object-cover rounded-md"
+            className="w-[760px] sm:w-full  object-cover rounded-md"
           />
         </motion.div>
 
