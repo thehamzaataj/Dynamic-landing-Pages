@@ -3,6 +3,7 @@ import React from 'react';
 const InputForm = () => {
   return (
     <div className='flex flex-col gap-8'>
+      <form>
         <div className='space-y-5'>
             <h5>Upload a logo</h5>
             <img className="rounded-full w-52 h-52" src="https://themewagon.github.io/finanza/img/about.jpg" alt="image description"/>
@@ -22,6 +23,7 @@ const InputForm = () => {
         Upload
         <input type="file" id="uploadFile1" accept="image/*" className="hidden" />
       </label>
+      </form>
     </div>
   );
 };
