@@ -1,27 +1,25 @@
-import React from 'react'
-import HeroTotalUser from './HeroTotalUser.jsx'
+import React from 'react';
+import HeroTotalUser from './HeroTotalUser.jsx';
 import DashboardNavbar from '../Navbar/DashboardNavbar';
 import TrafficChart from './AnalyticsChart/TrafficChart.jsx';
 import TotalUser from './AnalyticsChart/TotalUser.jsx';
 import LeadsChart from './AnalyticsChart/LeadsChart.jsx';
-import ProductTable from '../Admin/ProductTable.jsx'
-const DashboardHero = ({isDarkMode,ontoggleDarkMode}) => {
+import ProductTable from '../Admin/ProductTable.jsx';
+
+const DashboardHero = ({ isDarkMode, ontoggleDarkMode }) => {
   return (
-    <div className=''>
-      <div className='' >
-      <DashboardNavbar active={"Dashboard"} isDarkMode={isDarkMode} ontoggleDarkMode={ontoggleDarkMode} />
+    <div>
+      <DashboardNavbar title="Dashboard" subtitle="Home" isDarkMode={isDarkMode} ontoggleDarkMode={ontoggleDarkMode} />
+      <HeroTotalUser isDarkMode={isDarkMode} />
+      <div className='flex mt-6'>
+        <LeadsChart isDarkMode={isDarkMode} />
+        <TotalUser className="mr-6" isDarkMode={isDarkMode} />
       </div>
-      <HeroTotalUser isDarkMode={isDarkMode}/>
-      <div className='flex mt-6' >
-      <LeadsChart isDarkMode={isDarkMode}/>
-      <TotalUser className="mr-6"isDarkMode={isDarkMode} />
+      <div>
+        <ProductTable isDarkMode={isDarkMode} />
       </div>
-      <div >
-      <ProductTable isDarkMode={isDarkMode} />
     </div>
+  );
+};
 
-    </div>
-  )
-}
-
-export default DashboardHero
+export default DashboardHero;

@@ -2,7 +2,7 @@
   import './App.css';
   import { Routes, Route } from 'react-router-dom';
   import { HomePage } from './routes/Routes';
-  import { AdminDashboardPage, DashboardFeature,DashboardCustomize } from './routes/AdminRoutes';
+  import { AdminDashboardPage, DashboardFeature,DashboardCustomize, DashboardSettingPage } from './routes/AdminRoutes';
   // import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
   function App() {
@@ -62,6 +62,12 @@
               ontoggleDarkMode={handleToggleDarkMode}
               />
             }
+            />
+            <Route path='/setting'
+            element={<DashboardSettingPage
+              isDarkMode={isDarkMode}
+              ontoggleDarkMode={handleToggleDarkMode}
+            />}
             />
           </Routes>
       </>
