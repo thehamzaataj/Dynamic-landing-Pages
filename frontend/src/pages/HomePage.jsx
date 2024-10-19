@@ -9,7 +9,7 @@
   import './HomePage.css';
   import Features from '../components/Features.jsx';
   import { FaArrowUp } from "react-icons/fa6";
-
+import { Link } from 'react-router-dom';
   const HomePage = () => {
     const aboutUsRef = useRef(null);
     const featuresRef = useRef(null);
@@ -54,6 +54,7 @@
         <div ref={pricingRef}><Pricing /></div>
         <div ref={faqRef}><FaqSection /></div>
         <Footer />
+        <Link to={'/dashboard'}><a>Dashboard</a></Link>
       </div>
     );
   }
