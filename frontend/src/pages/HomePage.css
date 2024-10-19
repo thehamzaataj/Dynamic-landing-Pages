@@ -1,5 +1,5 @@
 .bg-image {
-    background-image: url("../../public/o.png");
+    background-image: url("../assets/o.png");
     height: 100vh;
     width: 100vw;
     background-size: cover;

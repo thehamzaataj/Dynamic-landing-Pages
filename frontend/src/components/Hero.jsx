@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ProImg from '../../public/business-attire-women-removebg-preview.png';
+import ProImg from '../assets/business-attire-women-removebg-preview.png';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
