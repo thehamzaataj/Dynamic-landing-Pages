@@ -1,6 +1,6 @@
   import { useState, useEffect } from 'react';
   import './App.css';
-  import { BrowserRouter, Routes, Route } from 'react-router-dom';
+  import { Routes, Route } from 'react-router-dom';
   import { HomePage } from './routes/Routes';
   import { AdminDashboardPage, DashboardFeature,DashboardCustomize } from './routes/AdminRoutes';
   // import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
@@ -35,7 +35,6 @@
           <UserButton />
         </SignedIn>
       </header> */}
-        <BrowserRouter>
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route
@@ -65,7 +64,6 @@
             }
             />
           </Routes>
-        </BrowserRouter>
       </>
     );
   }
