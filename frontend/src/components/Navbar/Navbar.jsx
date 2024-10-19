@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaFacebook, FaInstagram, FaBars, FaTimes } from "react-icons/fa";
 
+
 const Navbar = ({ refs, scrollToNavbar }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [navBg, setNavBg] = useState(false);

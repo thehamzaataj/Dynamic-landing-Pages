@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { RiHome7Line, RiNotificationLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { UserButton } from "@clerk/clerk-react";
+
 
 const DashboardNavbar = ({ active, isDarkMode, ontoggleDarkMode }) => {
   const [isNotificationDropdownOpen, setIsNotificationDropdownOpen] = useState(false);
@@ -72,7 +72,7 @@ const DashboardNavbar = ({ active, isDarkMode, ontoggleDarkMode }) => {
           )}
         </div>
 
-        <UserButton />
+       
       </div>
     </div>
   );
