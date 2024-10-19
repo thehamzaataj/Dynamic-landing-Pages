@@ -5,12 +5,9 @@ import DashboardFeaturePage from '../pages/Admin/DashboardFeaturesPage';
 const DashboardFeature = ({ isDarkMode, ontoggleDarkMode }) => {
   return (
     <div className={`min-h-screen flex ${isDarkMode ? 'bg-[#000000e9] text-white' : 'bg-[#fbfbfb] text-black'}`}>
-      {/* Sidebar */}
       <div className='w-[16.25rem] text-black fixed h-full'>
-        <AdminSideBar active={2} isDarkMode={isDarkMode} ontoggleDarkMode={ontoggleDarkMode}/>
+        <AdminSideBar active={4} isDarkMode={isDarkMode} ontoggleDarkMode={ontoggleDarkMode}/>
       </div>
-
-      {/* Content */}
       <div className='ml-[16.25rem] flex-1 p-6'>
         <DashboardFeaturePage isDarkMode={isDarkMode} ontoggleDarkMode={ontoggleDarkMode} />
       </div>
