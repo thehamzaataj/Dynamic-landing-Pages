@@ -5,7 +5,7 @@ import logo from "../../../assets/logo.png";
 import { IoIosArrowUp } from "react-icons/io";
 
 const AdminSideBar = ({ active, isDarkMode }) => {
-  const [isSettingsOpen, setIsSettingsOpen] = useState(active === 5 || active === 4 || active==2); // Automatically open if one of the inner pages is active
+  const [isSettingsOpen, setIsSettingsOpen] = useState(active === 6 || active === 5 || active === 4 || active==2); 
 
   const toggleSettings = () => {
     setIsSettingsOpen(!isSettingsOpen);
@@ -51,7 +51,7 @@ const AdminSideBar = ({ active, isDarkMode }) => {
           <button 
             onClick={toggleSettings}
             className={`w-full flex items-center justify-between space-x-2 p-2.5 rounded transition-colors duration-200 hover:bg-[#F2F3F4] hover:text-black
-               ${(active==2 || active === 5 || active === 4 || isSettingsOpen) ? '' : 'hover:bg-[#F2F3F4] hover:text-black'}`}
+               ${(active === 6 || active=== 2 || active === 5 || active === 4 || isSettingsOpen) ? '' : 'hover:bg-[#F2F3F4] hover:text-black'}`}
           >
             <div className="flex items-center space-x-2">
               <RiSettings3Line className="text-[19px]" />
@@ -81,10 +81,20 @@ const AdminSideBar = ({ active, isDarkMode }) => {
                     ${active === 2 ? 'bg-[#696cff29] text-[#696cff]' : 'hover:bg-[#F2F3F4] hover:text-black'}`}
                 >
                   <RiHome7Line className='text-[19px]' /> 
-                  <h5 className='text-[15px]'>Customize Page</h5>
+                  <h5 className='text-[15px]'>Hero Customize</h5>
                 </Link>
               </div>
-
+              {/* aboutsu */}
+              <div className="flex">
+                <Link 
+                  to={'/setting/about-us'} 
+                  className={`w-full flex items-center space-x-2 p-2.5 rounded transition-colors duration-200
+                    ${active === 6 ? 'bg-[#696cff29] text-[#696cff]' : 'hover:bg-[#F2F3F4] hover:text-black'}`}
+                >
+                  <RiHome7Line className='text-[19px]' /> 
+                  <h5 className='text-[15px]'>About Us</h5>
+                </Link>
+              </div>
               {/* Feature */}
               <div className="flex">
                 <Link 

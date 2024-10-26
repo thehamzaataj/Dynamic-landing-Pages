@@ -2,13 +2,11 @@
   import './App.css';
   import { Routes, Route } from 'react-router-dom';
   import { HomePage } from './routes/Routes';
-  import { AdminDashboardPage, DashboardFeature,DashboardCustomize, DashboardSettingPage } from './routes/AdminRoutes';
+  import { AdminDashboardPage, DashboardFeature,DashboardHero, DashboardSettingPage ,DashboardSettingAU} from './routes/AdminRoutes';
   // import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
   function App() {
     const [isDarkMode, setIsDarkMode] = useState(false);
-
-    // Load dark mode preference from localStorage on initial load
     useEffect(() => {
       const storedDarkMode = localStorage.getItem('darkMode');
       if (storedDarkMode) {
@@ -16,7 +14,6 @@
       }
     }, []);
 
-    // Toggle dark mode and save the preference to localStorage
     const handleToggleDarkMode = () => {
       setIsDarkMode((prevMode) => {
         const newMode = !prevMode;
@@ -27,14 +24,14 @@
 
     return (
       <>
-        {/* <header>
+        { /* <header>
         <SignedOut>
           <SignInButton />
         </SignedOut>
         <SignedIn>
           <UserButton />
         </SignedIn>
-      </header> */}
+      </header> */ }
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route
@@ -55,19 +52,26 @@
                 />
               }
             />
-            <Route
-            path='/dashboard/Customize-page'
-            element={<DashboardCustomize
-              isDarkMode={isDarkMode}
-              ontoggleDarkMode={handleToggleDarkMode}
-              />
-            }
-            />
             <Route path='/setting'
             element={<DashboardSettingPage
               isDarkMode={isDarkMode}
               ontoggleDarkMode={handleToggleDarkMode}
             />}
+            />
+             <Route
+            path='/dashboard/Customize-page'
+            element={<DashboardHero
+              isDarkMode={isDarkMode}
+              ontoggleDarkMode={handleToggleDarkMode}
+              />
+            }
+            />
+            <Route 
+            path='/setting/about-us'
+            element={<DashboardSettingAU
+              isDarkMode={isDarkMode}
+              ontoggleDarkMode={handleToggleDarkMode}
+              />}
             />
           </Routes>
       </>

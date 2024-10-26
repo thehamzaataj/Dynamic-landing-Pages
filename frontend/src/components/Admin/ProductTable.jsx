@@ -1,19 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 const ProductTable = ({ isDarkMode }) => {
-  // State to manage dropdown visibility
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  
-  // State to manage selected filter
   const [selectedFilter, setSelectedFilter] = useState('Last 30 days');
-  
-  // State to manage search input
   const [searchTerm, setSearchTerm] = useState('');
-  
-  // Reference for dropdown to handle outside clicks
+
   const dropdownRef = useRef(null);
 
-  // Handle clicks outside the dropdown to close it
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
