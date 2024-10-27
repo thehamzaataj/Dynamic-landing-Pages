@@ -46,7 +46,7 @@ const InputFormAU = () => {
                 backgroundImage: image
                   ? `url(${image})`
                   : "url('/static/metronic/tailwind/docs/dist/assets/media/avatars/blank.png')",
-                backgroundSize: "cover",
+                backgroundSize: "contain",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
               }}
@@ -165,7 +165,7 @@ const InputFormAU = () => {
           </div>
         </div>
         <div className="flex justify-center mt-6">
-        <Button className=  "px-10 bg-[#696cff] hover:bg-[#5b5efa] transition duration-300 ease-in-out" >Save Changes</Button>
+        <Button type="submit" className=  "px-10 bg-[#696cff] hover:bg-[#5b5efa] transition duration-300 ease-in-out" >Save Changes</Button>
           </div>
       </form>
     </div>

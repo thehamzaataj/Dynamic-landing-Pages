@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { Button } from "@material-tailwind/react";
 const FeatureInputForm = () => {
   return (
     <div>
@@ -63,6 +64,83 @@ const FeatureInputForm = () => {
               />
             </div>
           </div>
+          </div>
+          <div className="py-5">
+            <h5 className="text-sm font-semibold pb-2 border-b-4 border-[#696cff] inline-block text-gray-800">
+              Customize Card
+            </h5>
+          </div>
+          {/* card */}
+          <div className='flex gap-9 '>
+          <div className="space-y-4 ">
+            <div className="w-[370px]">
+              <label className="block mb-2 text-sm text-slate-800">
+            Main Heading
+              </label>
+              <input
+                className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Enter Your Website Name"
+              />
+            </div>
+            <div className="w-[370px]">
+              <label className="block mb-2 text-sm text-slate-800">
+                Paragraph
+              </label>
+              <textarea
+              rows={5}
+                className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Enter Your Website Name"
+              />
+          
+            </div>
+          </div>
+          <div className="space-y-4 ">
+            <div className="w-[370px]">
+              <label className="block mb-2 text-sm text-slate-800">
+            Main Heading
+              </label>
+              <input
+                className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Enter Your Website Name"
+              />
+            </div>
+            <div className="w-[370px]">
+              <label className="block mb-2 text-sm text-slate-800">
+                Paragraph
+              </label>
+              <textarea
+              rows={5}
+                className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Enter Your Website Name"
+              />
+          
+            </div>
+          </div>
+          <div className="space-y-4 ">
+            <div className="w-[370px]">
+              <label className="block mb-2 text-sm text-slate-800">
+            Main Heading
+              </label>
+              <input
+                className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Enter Your Website Name"
+              />
+            </div>
+            <div className="w-[370px]">
+              <label className="block mb-2 text-sm text-slate-800">
+                Paragraph
+              </label>
+              <textarea
+              rows={5}
+                className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Enter Your Website Name"
+              />
+          
+            </div>
+          </div>
+          </div>
+          <div className="flex justify-center mt-6">
+        <Button type="submit" className=  "px-10 bg-[#696cff] hover:bg-[#5b5efa] transition duration-300 ease-in-out" >Save Changes</Button>
           </div>
           </form>
     </div>
