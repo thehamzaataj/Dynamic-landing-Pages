@@ -9,9 +9,9 @@ const Pricing = () => {
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
             Designed for business teams like yours
           </h2>
-          <p className="mb-5 font-light text-gray-500 sm:text-xl">
+          {/* <p className="mb-5 font-light text-gray-500 sm:text-xl">
             Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.
-          </p>
+          </p> */}
         </div>
 
         {/* Pricing Cards */}

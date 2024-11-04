@@ -1,67 +1,47 @@
-import React from 'react';
-import {
-  Card,
-  CardBody,
-  Typography,
-  Button,
-  Avatar,
-  Tooltip,
-} from "@material-tailwind/react";
+import { FaEdit, FaTrash } from 'react-icons/fa';
 
 const ViewTestimonial = ({ testimonials, onDelete, onEdit }) => {
-    return (
-      <Card className="h-full w-full">
-        <CardBody className="overflow-scroll px-0">
-          <table className="mt-4 w-full min-w-max table-auto text-left">
-            <thead>
-              <tr>
-                <th className="border-y bg-blue-gray-50/50 p-4">Image</th>
-                <th className="border-y bg-blue-gray-50/50 p-4">Name</th>
-                <th className="border-y bg-blue-gray-50/50 p-4">Position</th>
-                <th className="border-y bg-blue-gray-50/50 p-4">Description</th>
-                <th className="border-y bg-blue-gray-50/50 p-4">Actions</th>
+  return (
+    <div className="relative shadow-md sm:rounded-lg">
+      <table className="w-full text-sm text-left text-gray-500">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr>
+            <th scope="col" className="p-4">Image</th>
+            <th scope="col" className="px-6 py-3">Name</th>
+            <th scope="col" className="px-6 py-3">Position</th>
+            <th scope="col" className="px-6 py-3">Description</th>
+            <th scope="col" className="px-6 py-3">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {testimonials.length === 0 ? (
+            <tr>
+              <td colSpan="5" className="text-center p-4">No testimonials available.</td>
+            </tr>
+          ) : (
+            testimonials.map(({ id, name, position, description, image }) => (
+              <tr key={id} className="bg-white border-b hover:bg-gray-50">
+                <td className="p-4">
+                  <img className="w-16 h-16 rounded-full" src={image} alt={name} />
+                </td>
+                <td className="px-6 py-4 font-bold text-black">{name} {id}</td>
+                <td className="px-6 py-4">{position}</td>
+                <td className="px-6 py-4 w-[550px]">{description}</td>
+                <td className="px-2 py-4">
+                  <button onClick={() => onEdit({ id, name, position, description, image })} className="text-blue-600 hover:underline">
+                    <FaEdit className='text-[20px]' />
+                  </button>
+                  <button onClick={() => onDelete(id)} className="ml-4 text-red-600 hover:underline">
+                    <FaTrash className='text-[20px]' />
+                  </button>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {testimonials.map(({ id, name, position, description, image }) => (
-                <tr key={id}>
-                  <td className="p-4">
-                    <Avatar src={image} alt={name} size="sm" />
-                  </td>
-                  <td className="p-4">
-                    <Typography variant="small" color="blue-gray" className="font-normal">
-                      {name}
-                    </Typography>
-                  </td>
-                  <td className="p-4">
-                    <Typography variant="small" color="blue-gray" className="font-normal">
-                      {position}
-                    </Typography>
-                  </td>
-                  <td className="p-4">
-                    <Typography variant="small" color="blue-gray" className="font-normal">
-                      {description}
-                    </Typography>
-                  </td>
-                  <td className="p-4">
-                    <Tooltip content="Edit Testimonial">
-                      <Button onClick={() => onEdit({ id, name, position, description, image })} size="sm" variant="outlined" className="mr-2">
-                        Edit
-                      </Button>
-                    </Tooltip>
-                    <Tooltip content="Delete Testimonial">
-                      <Button onClick={() => onDelete(id)} size="sm" variant="outlined" color="red">
-                        Delete
-                      </Button>
-                    </Tooltip>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </CardBody>
-      </Card>
-    );
-  };
-  
-  export default ViewTestimonial;
+            ))
+          )}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default ViewTestimonial;

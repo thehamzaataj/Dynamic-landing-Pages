@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { IoIosCamera } from "react-icons/io";
-import { Button } from "@material-tailwind/react";
-import ViewTestimonial from "../testimonial/ViewTestimonial.jsx";
+import { Button } from "@material-tailwind/react";  
+import ViewTestimonial from "./ViewTestimonial"; 
+import { useDispatch,useSelector } from "react-redux";
+import { addTestimonial ,updateTestimonial ,deleteTestimonial } from "../../Redux/testimonials/testimonials";
 
 const InputTestimonialForm = () => {
+  const dispatch =  useDispatch();
+  const testimonials = useSelector((state)=>state.testimonials.list)
+  const [mainheading, setMainHeading] = useState("");
   const [image, setImage] = useState(null);
-  const [testimonials, setTestimonials] = useState([]);
   const [name, setName] = useState("");
   const [position, setPosition] = useState("");
   const [description, setDescription] = useState("");
@@ -38,15 +42,14 @@ const InputTestimonialForm = () => {
         image,
       };
 
-      setTestimonials((prevTestimonials) => {
         if (editingId) {
-          return prevTestimonials.map((testimonial) =>
-            testimonial.id === editingId ? newTestimonial : testimonial
-          );
+          // return prevTestimonials.map((testimonial) =>
+          //   testimonial.id === editingId ? newTestimonial : testimonial
+          dispatch(updateTestimonial(newTestimonial))
         }
-        return [...prevTestimonials, newTestimonial];
-      });
-
+        else{
+          dispatch(addTestimonial(newTestimonial))
+        }
       resetForm();
     }
   };
@@ -64,28 +67,31 @@ const InputTestimonialForm = () => {
     setName(testimonial.name);
     setPosition(testimonial.position);
     setDescription(testimonial.description);
-    setImage(testimonial.image); 
+    setImage(testimonial.image);
   };
 
   const handleDelete = (id) => {
-    setTestimonials((prevTestimonials) =>
-      prevTestimonials.filter((testimonial) => testimonial.id !== id)
-    );
+    // setTestimonials((prevTestimonials) =>
+    //   prevTestimonials.filter((testimonial) => testimonial.id !== id)
+    // );
+    dispatch(deleteTestimonial(id));
   };
 
   return (
     <div>
-      <form className="flex gap-9" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex gap-9">
         <div className="w-[950px]">
           <label className="block mb-2 text-sm text-slate-800">Main Heading</label>
           <input
-            className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+            value={mainheading}
+            onChange={(e) => setMainHeading(e.target.value)}
+            className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2"
             placeholder="Enter Your Heading Here"
           />
         </div>
         <div className="flex mt-7">
-          <Button type="submit" className="px-10 bg-[#696cff] hover:bg-[#5b5efa] transition duration-300 ease-in-out">
-            {editingId ? "Update Testimonial" : "Save Changes"}
+          <Button type="submit" className="px-10 bg-[#696cff] hover:bg-[#5b5efa]">
+            {editingId ? "Update Testimonial" : "Save Testimonial"}
           </Button>
         </div>
       </form>
@@ -109,7 +115,7 @@ const InputTestimonialForm = () => {
             />
             <label
               htmlFor="image-upload"
-              className="cursor-pointer rounded-full border-2 border-[#c4c7ca] relative hover:shadow-lg transition-shadow duration-200 ease-in-out"
+              className="cursor-pointer rounded-full border-2 border-[#c4c7ca] relative"
               style={{
                 width: "240px",
                 height: "240px",
@@ -131,7 +137,7 @@ const InputTestimonialForm = () => {
 
             {image && (
               <button
-                className="absolute top-48 right-[274px] bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-full transition-all duration-200"
+                className="absolute top-56 right-[110px] bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-full"
                 onClick={removeImage}
               >
                 ✖
@@ -150,7 +156,7 @@ const InputTestimonialForm = () => {
               <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2"
                 placeholder="Enter Your Name Here"
               />
             </div>
@@ -159,7 +165,7 @@ const InputTestimonialForm = () => {
               <input
                 value={position}
                 onChange={(e) => setPosition(e.target.value)}
-                className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2"
                 placeholder="Enter Your Position Here"
               />
             </div>
@@ -169,14 +175,14 @@ const InputTestimonialForm = () => {
                 rows={4}
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2"
                 placeholder="Enter Your Description Here"
               />
             </div>
           </div>
         </div>
         <div className="flex justify-center mt-6">
-          <Button type="submit" className="px-10 bg-[#696cff] hover:bg-[#5b5efa] transition duration-300 ease-in-out">
+          <Button type="submit" className="px-10 bg-[#696cff] hover:bg-[#5b5efa]">
             {editingId ? "Update Testimonial" : "Save Testimonial"}
           </Button>
         </div>
