@@ -4,24 +4,24 @@
   "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon sever.ts"
+    "dev": "nodemon --exec ts-node src/server.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
     "backend": "file:",
     "body-parser": "^1.20.3",
-    "drizzle-orm": "^0.35.3",
+    "drizzle-orm": "^0.36.0",
     "express": "^4.21.1",
-    "mysql2": "^3.11.3"
+    "mysql2": "^3.11.3",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "@types/body-parser": "^1.19.5",
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.7.9",
-    "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
   }
 }

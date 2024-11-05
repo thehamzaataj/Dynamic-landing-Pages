@@ -114,14 +114,14 @@ const LeadsChart = ({isDarkMode}) => {
       chart.render();
       
       return () => {
-        chart.destroy(); // Clean up chart on component unmount
+        chart.destroy(); 
       };
     }
   }, []);
 
   return (
     <div className={`w-full mr-3  rounded-lg shadow  p-4 md:p-6 ${isDarkMode ? 'bg-[#1c1e21]':'bg-white'}`}>
-      <div className="flex justify-between pb-4 mb-4  border-gray-200 dark:border-gray-700">
+      <div className="flex justify-between pb-4 mb-4 border-gray-200 ">
         <div className="flex items-center">
           <div className="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center me-3">
             <svg className="w-6 h-6 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 19">

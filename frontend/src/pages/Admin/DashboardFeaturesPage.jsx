@@ -9,7 +9,7 @@ const DashboardFeaturesPage = ({isDarkMode,ontoggleDarkMode}) => {
     </div>
     <div className='p-3 space-y-4'>
       <h1 className='text-4xl font-bold text-[#696CFF]'>Customize Your Feature Page</h1>
-      <FeatureInputForm/>
+      <FeatureInputForm isDarkMode={isDarkMode}/>
     </div>
     </>
   )

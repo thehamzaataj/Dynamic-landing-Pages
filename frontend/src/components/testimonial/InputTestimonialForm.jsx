@@ -5,10 +5,10 @@ import ViewTestimonial from "./ViewTestimonial";
 import { useDispatch,useSelector } from "react-redux";
 import { addTestimonial ,updateTestimonial ,deleteTestimonial } from "../../Redux/testimonials/testimonials";
 
-const InputTestimonialForm = () => {
+const InputTestimonialForm = ({isDarkMode}) => {
   const dispatch =  useDispatch();
   const testimonials = useSelector((state)=>state.testimonials.list)
-  const [mainheading, setMainHeading] = useState("");
+  const [mainHeading, setMainHeading] = useState("");
   const [image, setImage] = useState(null);
   const [name, setName] = useState("");
   const [position, setPosition] = useState("");
@@ -83,7 +83,7 @@ const InputTestimonialForm = () => {
         <div className="w-[950px]">
           <label className="block mb-2 text-sm text-slate-800">Main Heading</label>
           <input
-            value={mainheading}
+            value={mainHeading}
             onChange={(e) => setMainHeading(e.target.value)}
             className="w-full bg-transparent bg-slate-50 placeholder:text-slate-400 text-slate-700 text-sm border border-[#c4c7ca] rounded-md px-3 py-2"
             placeholder="Enter Your Heading Here"
@@ -97,7 +97,7 @@ const InputTestimonialForm = () => {
       </form>
 
       <div className="py-5">
-        <h5 className="text-sm font-semibold pb-2 border-b-4 border-[#696cff] inline-block text-gray-800">
+        <h5 className={`text-sm font-semibold pb-2 border-b-4 border-[#696cff] inline-block  ${isDarkMode ? 'text-gray-50':'text-gray-800'}` }>
           Add Your Testimonial
         </h5>
       </div>
@@ -115,7 +115,7 @@ const InputTestimonialForm = () => {
             />
             <label
               htmlFor="image-upload"
-              className="cursor-pointer rounded-full border-2 border-[#c4c7ca] relative"
+              className={`cursor-pointer rounded-full  relative ${isDarkMode?'bg-gray-700':'border-[#c4c7ca] border-2 '}`}
               style={{
                 width: "240px",
                 height: "240px",
@@ -129,7 +129,7 @@ const InputTestimonialForm = () => {
               }}
             >
               {!image && (
-                <div className="flex items-center justify-center h-full bg-gray-100 rounded-full">
+                <div className={`flex items-center justify-center h-full rounded-full ${isDarkMode?'bg-[#1c1e21]':'bg-gray-100'}`}>
                   <IoIosCamera className="text-6xl text-gray-600" />
                 </div>
               )}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { Button } from "@material-tailwind/react";
-const FeatureInputForm = () => {
+const FeatureInputForm = ({isDarkMode}) => {
   return (
     <div>
         <form>
@@ -66,7 +66,7 @@ const FeatureInputForm = () => {
           </div>
           </div>
           <div className="py-5">
-            <h5 className="text-sm font-semibold pb-2 border-b-4 border-[#696cff] inline-block text-gray-800">
+            <h5 className={`text-sm font-semibold pb-2 border-b-4 border-[#696cff] inline-block  ${isDarkMode?'text-gray-50':'text-gray-800'}`} >
               Customize Card
             </h5>
           </div>

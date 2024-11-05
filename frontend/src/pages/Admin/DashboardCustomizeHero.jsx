@@ -10,7 +10,7 @@ const DashboardCustomizeHero = ({isDarkMode,ontoggleDarkMode}) => {
     <div className='p-3 space-y-4'>
       <h1 className='text-4xl font-bold text-[#696CFF]'>Customize Your Hero Page</h1>
       <div>
-      <InputForm/>
+      <InputForm isDarkMode={isDarkMode}/>
       </div>
       
     </div>

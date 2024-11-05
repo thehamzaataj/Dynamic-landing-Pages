@@ -1,8 +1,7 @@
 import { useState } from "react"; 
 import { FaFacebook, FaInstagram } from "react-icons/fa"; 
 import { IoIosCamera } from "react-icons/io";
-import { FaExternalLinkAlt } from "react-icons/fa";
-const InputForm = () => {
+const InputForm = ({isDarkMode}) => {
   const [image, setImage] = useState(null);
   const [buttonName, setButtonName] = useState("");
   const [buttonLink, setButtonLink] = useState("");
@@ -42,7 +41,7 @@ const InputForm = () => {
 
             <label
               htmlFor="image-upload"
-              className="cursor-pointer rounded-md border-2 border-gray-300 relative hover:shadow-lg transition-shadow duration-200 ease-in-out"
+              className={`cursor-pointer rounded-md border-2  relative hover:shadow-lg transition-shadow duration-200 ease-in-out ${isDarkMode?'bg-black':'border-gray-300'}`}
               style={{
                 width: "100%",
                 height: "200px",
@@ -55,7 +54,7 @@ const InputForm = () => {
               }}
             >
               {!image && (
-                <div className="flex items-center justify-center h-full bg-gray-100">
+                <div className={`flex items-center justify-center h-full  ${isDarkMode?'bg-[#1c1e21]':'bg-gray-100'}`}>
                   <IoIosCamera className="text-6xl text-gray-600" />
                 </div>
               )}

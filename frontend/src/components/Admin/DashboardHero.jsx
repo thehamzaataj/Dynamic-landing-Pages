@@ -1,7 +1,5 @@
-import React from 'react';
 import HeroTotalUser from './HeroTotalUser.jsx';
 import DashboardNavbar from '../Navbar/DashboardNavbar';
-import TrafficChart from './AnalyticsChart/TrafficChart.jsx';
 import TotalUser from './AnalyticsChart/TotalUser.jsx';
 import LeadsChart from './AnalyticsChart/LeadsChart.jsx';
 import ProductTable from '../Admin/ProductTable.jsx';

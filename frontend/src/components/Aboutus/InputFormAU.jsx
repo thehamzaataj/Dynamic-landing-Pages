@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoIosCamera } from "react-icons/io";
 import { Button } from "@material-tailwind/react";
-const InputFormAU = () => {
+const InputFormAU = ({isDarkMode}) => {
   const [image, setImage] = useState(null);
 
   const handleImageChange = (e) => {
@@ -39,7 +39,7 @@ const InputFormAU = () => {
 
             <label
               htmlFor="image-upload"
-              className="cursor-pointer rounded-md border-2 border-[#c4c7ca] relative hover:shadow-lg transition-shadow duration-200 ease-in-out"
+              className={`cursor-pointer rounded-md  relative hover:shadow-lg border-2 transition-shadow duration-200 ease-in-out ${isDarkMode?'border-gray-500':' border-gray-300'}`}
               style={{
                 width: "100%",
                 height: "200px",
@@ -52,7 +52,7 @@ const InputFormAU = () => {
               }}
             >
               {!image && (
-                <div className="flex items-center justify-center h-full bg-gray-100">
+                <div className={`flex items-center justify-center h-full ${isDarkMode? 'bg-[#1c1e21]':'bg-gray-100 '}`}>
                   <IoIosCamera className="text-6xl text-gray-600" />
                 </div>
               )}
@@ -98,7 +98,7 @@ const InputFormAU = () => {
           </div>
         </div>
         <div className="py-5">
-            <h5 className="text-sm font-semibold pb-2 border-b-4 border-[#696cff] inline-block text-gray-800">
+            <h5 className={`text-sm font-semibold pb-2 border-b-4 border-[#696cff] inline-block ${isDarkMode?'text-gray-50':'text-gray-800 '}`}>
               Customize Tab
             </h5>
           </div>
