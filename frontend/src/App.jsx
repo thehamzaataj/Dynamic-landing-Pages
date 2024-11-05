@@ -2,7 +2,7 @@
   import './App.css';
   import { Routes, Route } from 'react-router-dom';
   import { HomePage } from './routes/Routes';
-  import { AdminDashboardPage, DashboardFeature,DashboardHero, DashboardSettingPage ,DashboardSettingAU ,AdminSettingFeaturePage, AdminSettingPricingPage,AdminSettingFaqsPage} from './routes/AdminRoutes';
+  import { AdminDashboardPage, DashboardFeature,DashboardHero, DashboardSettingPage ,DashboardSettingAU ,AdminSettingFeaturePage, AdminSettingPricingPage} from './routes/AdminRoutes';
   // import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
   function App() {
@@ -83,13 +83,6 @@
             <Route 
             path='/setting/pricing'
             element={<AdminSettingPricingPage
-              isDarkMode={isDarkMode}
-              ontoggleDarkMode={handleToggleDarkMode}
-              />}
-            />
-            <Route 
-            path='/setting/faqs'
-            element={<AdminSettingFaqsPage
               isDarkMode={isDarkMode}
               ontoggleDarkMode={handleToggleDarkMode}
               />}

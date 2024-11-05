@@ -4,7 +4,6 @@
   import AboutUs from '../components/AboutUs.jsx';
   import Testimonials from '../components/Testimonials.jsx';
   import Pricing from '../components/Pricing.jsx';
-  import FaqSection from '../components/FaqSection.jsx';
   import Footer from '../components/Footer.jsx';
   import './HomePage.css';
   import Features from '../components/Features.jsx';
@@ -15,7 +14,6 @@ import { Link } from 'react-router-dom';
     const featuresRef = useRef(null);
     const testimonialsRef = useRef(null);
     const pricingRef = useRef(null);
-    const faqRef = useRef(null);
     const navbarRef = useRef(null);
 
     
@@ -42,7 +40,6 @@ import { Link } from 'react-router-dom';
             featuresRef, 
             testimonialsRef, 
             pricingRef, 
-            faqRef 
           }} 
           scrollToNavbar={scrollToNavbar}
         />
@@ -52,9 +49,8 @@ import { Link } from 'react-router-dom';
         <div ref={featuresRef}><Features /></div>
         <div ref={testimonialsRef}><Testimonials /></div>
         <div ref={pricingRef}><Pricing /></div>
-        <div ref={faqRef}><FaqSection /></div>
         <Footer />
-        <Link to={'/dashboard'}><a>Dashboard</a></Link>
+        {/* <Link to={'/dashboard'}><a>Dashboard</a></Link> */}
       </div>
     );
   }

@@ -47,7 +47,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="m-6 md:m-20 md:pt-28 text-center space-y-9">
+    <div className="m-6 md:mx-20 md:pt-24 text-center space-y-9">
       <h5 className="text-lg font-semibold pb-2 border-b-4 border-blue-500 inline-block text-gray-800">Testimonial</h5>
       <h1 className="text-4xl md:text-5xl font-bold">What Our Clients Say!</h1>
       <Swiper

@@ -5,7 +5,6 @@ import DashboardSettingPage from '../pages/DashboardSettingPage.jsx'
 import DashboardSettingAU from '../pages/DashboardSettingAU.jsx'
 import AdminSettingFeaturePage from  '../pages/AdminSettingFeaturePage.jsx'
 import AdminSettingPricingPage from '../pages/AdminSettingPricingPage.jsx'
-import AdminSettingFaqsPage from '../pages/AdminSettingFaqsPage.jsx'
 export{
     AdminDashboardPage,
     DashboardFeature,
@@ -14,5 +13,4 @@ export{
     DashboardSettingAU,
     AdminSettingFeaturePage,
     AdminSettingPricingPage,
-    AdminSettingFaqsPage
 }   
